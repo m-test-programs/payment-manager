@@ -1,0 +1,13 @@
+@import "./variables";
+
+.container {
+  padding: 5rem;
+  background-color: var(--back);
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: $breakpoint-mobile) {
+    display: block;
+  }
+}

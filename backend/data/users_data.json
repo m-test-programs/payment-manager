@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "first_name": "John",
+      "last_name": "Doe",
+      "image": "john.jpg",
+      "email": "john.doe@test.com",
+      "date_of_birth": "1980-10-15",
+      "payment_amount": 1200
+    },
+    {
+      "first_name": "Gina",
+      "last_name": "Daniels",
+      "image": "gina.jpg",
+      "email": "gina.daniels@test.com",
+      "date_of_birth": "1986-08-03",
+      "payment_amount": 500
+    },
+    {
+      "first_name": "Ethan",
+      "last_name": "Davidson",
+      "image:": "ethan.jpg",
+      "email": "ethan.davidson@test.com",
+      "date_of_birth": "1990-11-10",
+      "payment_amount": 85
+    }
+  ]
+}

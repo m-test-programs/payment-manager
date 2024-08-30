@@ -1,0 +1,43 @@
+{
+  "invoices": [
+    {
+      "invoice_number": "484D6-0293",
+      "invoice_date": "2024-12-06",
+      "invoice_user_id": "372",
+      "invoice_assigned": false,
+      "invoice_amount": null,
+      "fees": {
+        "platform_fee": 20,
+        "spedition_fee": 25,
+        "payment_processor_fee": 10,
+        "taxes_fee": 10
+      }
+    },
+    {
+      "invoice_number": "484D6-0193",
+      "invoice_date": "2024-10-11",
+      "invoice_user_id": "372",
+      "invoice_assigned": false,
+      "invoice_amount": null,
+      "fees": {
+        "platform_fee": 10,
+        "spedition_fee": 30,
+        "payment_processor_fee": 5,
+        "taxes_fee": 5
+      }
+    },
+    {
+      "invoice_number": "484D6-1193",
+      "invoice_date": "2023-05-06",
+      "invoice_user_id": "372",
+      "invoice_assigned": true,
+      "invoice_amount": 188,
+      "fees": {
+        "platform_fee": 10,
+        "spedition_fee": 12,
+        "payment_processor_fee": 30,
+        "taxes_fee": 5
+      }
+    }
+  ]
+}
