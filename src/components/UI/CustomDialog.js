@@ -14,9 +14,13 @@ function CustomDialog(props) {
     selectedValue,
     open,
     title,
+    titleStyle,
+    titleAddon,
+    titleAddonStyle,
     children,
     actions,
     errorMessage,
+    fullWidth,
   } = props;
 
   const handleClose = () => {
@@ -24,8 +28,12 @@ function CustomDialog(props) {
   };
 
   return (
-    <Dialog onClose={handleClose} open={open}>
-      <DialogTitle>{title}</DialogTitle>
+    <Dialog onClose={handleClose} open={open} fullWidth={fullWidth}>
+      <DialogTitle>
+        {" "}
+        <span style={titleStyle}>{title}</span>{" "}
+        {titleAddon && <span style={titleAddonStyle}>{titleAddon}</span>}
+      </DialogTitle>
       <DialogContent>
         {errorMessage && (
           <Alert variant="filled" severity="error">

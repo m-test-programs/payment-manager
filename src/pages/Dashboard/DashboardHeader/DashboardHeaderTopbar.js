@@ -10,7 +10,7 @@ function DashboardHeaderTopbar() {
     <div className={styles.topBar}>
       <div className={styles.search}>
         <IconBadge icon="dollar-sign" />
-        <h3>Easy Payments Dashboard</h3>
+        <h3 className={styles.topBar__title}>Easy Payments Dashboard</h3>
         <SearchInput />
       </div>
       <div className={styles.user}>

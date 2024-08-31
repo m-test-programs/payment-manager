@@ -52,6 +52,15 @@ const theme = createTheme({
         },
       },
     },
+    MuiAlert: {
+      styleOverrides: {
+        root: {
+          "&.MuiAlert-colorError": {
+            backgroundColor: "#eb2d3a",
+          },
+        },
+      },
+    },
   },
   palette: {
     secondary: {

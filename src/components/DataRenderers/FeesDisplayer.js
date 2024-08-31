@@ -7,7 +7,9 @@ import { useState } from "react";
 import FeesForm from "../forms/FeesForm";
 import axios from "axios";
 
-function FeesDisplayer() {
+function FeesDisplayer(props) {
+  const { mode } = props;
+
   const fees = useStore((store) => store.selectedFees);
 
   const fetchInvoices = useStore((store) => store.fetchInvoices);
@@ -111,11 +113,13 @@ function FeesDisplayer() {
         icon="shop"
         emphasize
       />
-      <CustomButton
-        title="Edit Fees"
-        color="secondary"
-        click={() => setOpen(true)}
-      />
+      {mode === "edit" && (
+        <CustomButton
+          title="Edit Fees"
+          color="secondary"
+          click={() => setOpen(true)}
+        />
+      )}
       <CustomDialog
         open={open}
         onClose={() => setOpen(false)}

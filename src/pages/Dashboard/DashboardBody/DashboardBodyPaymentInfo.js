@@ -33,7 +33,7 @@ function DashboardBodyPaymentInfo() {
         <InvoiceList />
       </CardContainer>
       <CardContainer title="Fees" info={{ title: "Fees", text: infoData.fees }}>
-        <FeesDisplayer />
+        <FeesDisplayer mode="edit" />
       </CardContainer>
     </div>
   );

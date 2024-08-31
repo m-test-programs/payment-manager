@@ -17,7 +17,10 @@ function InvoiceListEntry(props) {
   };
 
   return (
-    <div className={classes} onClick={() => selectInvoice(number)}>
+    <div
+      className={classes}
+      onClick={!isSelected ? () => selectInvoice(number) : null}
+    >
       <div className={styles.invoiceEntry__firstRow}>
         <FavoriteButton isFavorite={isFavorite} />
         <p>Invoice Number: {number} </p>

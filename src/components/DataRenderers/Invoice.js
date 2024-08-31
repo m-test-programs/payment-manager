@@ -1,17 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import useStore from "../../store/store";
 import dateFormatter from "../../utils/dateFormatter";
 import { priceFormatter } from "../../utils/priceFormatter";
-import FavoriteButton from "../FavoriteButton";
 import styles from "../../styles/DataRenderers.module.scss";
 import CustomButton from "../CustomButton";
 import axios from "axios";
 import Icon from "../Icon";
+import CustomDialog from "../UI/CustomDialog";
+import SummaryScreen from "../SummaryScreen";
 
 function Invoice() {
   const invoice = useStore((store) => store.selectedInvoice);
   const payment = useStore((store) => store.paymentDetails);
   const fetchInvoices = useStore((store) => store.fetchInvoices);
+
+  const [open, setOpen] = useState(false);
+
+  const [dialogMode, setDialogMode] = useState("");
 
   const assignPrice = async () => {
     try {
@@ -25,6 +30,7 @@ function Invoice() {
       fetchInvoices({
         selectNumber: invoice.invoice_number,
       });
+      setOpen(false);
     } catch (error) {
       console.log(error);
     }
@@ -43,16 +49,50 @@ function Invoice() {
       fetchInvoices({
         selectNumber: invoice.invoice_number,
       });
+
+      closeDialog();
     } catch (error) {
       console.log(error);
     }
   };
 
+  const openDialog = (mode) => {
+    setDialogMode(mode);
+    setOpen(true);
+  };
+
+  const closeDialog = () => {
+    setDialogMode("");
+    setOpen(false);
+  };
+
   return (
     <div className={styles.invoice}>
-      {/* <div className={styles.favoriteWrapper}>
-        <FavoriteButton isFavorite={invoice.invoice_assigned} />
-      </div> */}
+      <CustomDialog
+        open={open}
+        onClose={closeDialog}
+        title="Your Summary for the invoice"
+        titleAddon={`#${invoice.invoice_number}`}
+        titleAddonStyle={{ color: "var(--info)", fontWeight: 600 }}
+        fullWidth
+        actions={[
+          {
+            title:
+              dialogMode === "assign"
+                ? "Confirm and Assign"
+                : "Confirm and Remove",
+            click: dialogMode === "assign" ? assignPrice : removePrice,
+            color: dialogMode === "assign" ? "" : "error",
+          },
+          {
+            title: "Cancel",
+            color: "info",
+            click: closeDialog,
+          },
+        ]}
+      >
+        <SummaryScreen mode={dialogMode} />
+      </CustomDialog>
       <Icon
         icon="hashtag"
         label={`Invoice number: ${invoice?.invoice_number}`}
@@ -72,12 +112,12 @@ function Invoice() {
 
       <div className={styles.buttons}>
         <CustomButton
-          click={assignPrice}
+          click={() => openDialog("assign")}
           title="Assign Price"
           disabled={invoice.invoice_assigned}
         />
         <CustomButton
-          click={removePrice}
+          click={() => openDialog("remove")}
           title="Remove Price"
           color="error"
           disabled={!invoice.invoice_assigned}

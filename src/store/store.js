@@ -4,6 +4,7 @@ import { create } from "zustand";
 const useStore = create((set, get) => ({
   fetchedInvoices: [],
   invoices: [],
+  assignedInvoiceNumber: "",
   fees: [],
   paymentDetails: {},
 
@@ -17,12 +18,15 @@ const useStore = create((set, get) => ({
 
   fetchInvoices: async (params) => {
     try {
-      const { data: invoices } = await axios.get(
+      const {
+        data: { invoices, assigned_invoice_number },
+      } = await axios.get(
         `${process.env.REACT_APP_BASE_URL}/invoices/get_data.php`
       );
       if (!!invoices && invoices.length > 0) {
         get().setInvoices(invoices);
         set(() => ({ fetchedInvoices: invoices }));
+        set(() => ({ assignedInvoiceNumber: assigned_invoice_number }));
         if (params && params.autoSelect) {
           get().setSelectedInvoice(invoices[0]);
         } else if (params && params.selectNumber) {
@@ -81,6 +85,8 @@ const useStore = create((set, get) => ({
 
   //payments
   setPaymentDetails: (payment) => set(() => ({ paymentDetails: payment })),
+
+  //summary
 }));
 
 export default useStore;

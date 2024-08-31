@@ -24,20 +24,18 @@
   .info {
     width: 1rem;
   }
-  hr {
-  }
 }
 
 .iconBadge {
-  padding: 0.5rem;
+  padding: 1rem;
   background-color: var(--info);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 100%;
-  width: 0.5rem;
-  height: 0.5rem;
-  font-size: 10px;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .icon {

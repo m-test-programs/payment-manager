@@ -30,8 +30,8 @@
             "invoice_number": "484D6-1193",
             "invoice_date": "2023-05-06",
             "invoice_user_id": "372",
-            "invoice_assigned": true,
-            "invoice_amount": "1666",
+            "invoice_assigned": false,
+            "invoice_amount": null,
             "fees": {
                 "platform_fee": "18",
                 "spedition_fee": "22",
