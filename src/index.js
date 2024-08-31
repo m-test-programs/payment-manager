@@ -14,6 +14,14 @@ import {
   faSearch,
   faEnvelope,
   faCalendar,
+  faCircleInfo,
+  faLayerGroup,
+  faTruck,
+  faCreditCard,
+  faMoneyBill,
+  faShop,
+  faHashtag,
+  faDatabase,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -24,7 +32,15 @@ library.add(
   faChevronLeft,
   faSearch,
   faEnvelope,
-  faCalendar
+  faCalendar,
+  faCircleInfo,
+  faLayerGroup,
+  faTruck,
+  faCreditCard,
+  faMoneyBill,
+  faShop,
+  faHashtag,
+  faDatabase
 );
 
 const theme = createTheme({
@@ -46,6 +62,9 @@ const theme = createTheme({
     },
     info: {
       main: "#ffff",
+    },
+    primary: {
+      main: "#6681e8",
     },
   },
 });

@@ -2,12 +2,18 @@
   --border-radius: 15px;
   --shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
   --info: #6681e8;
+  --info-dark: #2b44a4;
   --dark: #1f2125;
   --dark-soft: #2c2f36;
   --gray: #f6f6f6;
   --disabled: #97989a;
   --back: #b7c5ff;
   --back-transparent: #b7c5ff7c;
+  --info-gradient: linear-gradient(
+    to bottom right,
+    var(--info),
+    var(--info-dark)
+  );
 }
 
 #root {

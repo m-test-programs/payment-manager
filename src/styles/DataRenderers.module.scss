@@ -1,3 +1,21 @@
+@use "typography" as *;
+
+.feeEntry {
+  display: flex;
+  gap: 5px;
+}
+
+.feeEntryEmphasize {
+  span {
+    font-weight: bold;
+  }
+}
+
+.invoices {
+  max-height: 16rem;
+  overflow-y: auto;
+}
+
 .invoice {
   position: relative;
 }
@@ -6,6 +24,22 @@
   position: absolute;
   top: -35%;
   right: 0%;
+}
+
+.paymentDetails,
+.customerDetails {
+  font-size: $paragraphSmall;
+}
+
+.paymentDetails {
+  &__amount {
+    border: 2px dashed var(--info);
+    padding: 2px;
+    border-radius: var(--border-radius);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
 }
 
 .buttons {

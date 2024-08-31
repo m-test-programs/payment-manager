@@ -1,3 +1,5 @@
+@use "typography" as *;
+
 .card {
   padding: 1rem;
   background-color: #fff;
@@ -6,10 +8,23 @@
   min-height: 5rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  .titleWrapper {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+  }
   .cardTitle {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin: 0;
     padding: 0;
+    flex: 1;
+  }
+  .info {
+    width: 1rem;
+  }
+  hr {
   }
 }
 
@@ -33,6 +48,12 @@
   align-items: center;
   gap: 5px;
   font-size: 0.8rem;
+  &__label {
+    font-size: 1rem;
+  }
+  &__labelSmall {
+    font-size: 0.8rem;
+  }
 }
 
 .userBadge {
@@ -40,9 +61,7 @@
   align-items: center;
   gap: 5px;
   p {
-    margin: 0;
-    padding: 0;
-    font-size: 0.8rem;
+    font-size: $paragraphSmall;
   }
   .imageWrapper {
     width: 1.2rem;
@@ -75,5 +94,34 @@
   }
 }
 
-.favorite {
+.favoriteButton {
+  background: var(--info);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  color: white;
+}
+
+.paragraph {
+  p {
+    font-size: $paragraphNormal;
+  }
+}
+
+.paragraphSmall {
+  p {
+    font-size: $paragraphSmall;
+  }
+}
+
+.counter {
+  font-size: 2rem;
+  color: var(--dark-soft);
+  font-weight: 600;
+  // background-image: var(--info-gradient);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  // font-weight: bold;
 }

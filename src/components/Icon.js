@@ -3,11 +3,19 @@ import React from "react";
 import styles from "../styles/Components.module.scss";
 
 function Icon(props) {
-  const { icon, customStyle, label } = props;
+  const { icon, customStyle, label, size, sx, click } = props;
   return (
     <div className={styles.icon} style={{ ...customStyle }}>
-      <FontAwesomeIcon icon={icon} />
-      {label && <p>{label}</p>}
+      <FontAwesomeIcon icon={icon} style={sx} onClick={() => click()} />
+      {label && (
+        <p
+          className={
+            size === "small" ? styles.icon__labelSmall : styles.icon__label
+          }
+        >
+          {label}
+        </p>
+      )}
     </div>
   );
 }

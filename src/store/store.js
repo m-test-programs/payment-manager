@@ -1,8 +1,11 @@
+import axios from "axios";
 import { create } from "zustand";
 
 const useStore = create((set, get) => ({
+  fetchedInvoices: [],
   invoices: [],
   fees: [],
+  paymentDetails: {},
 
   selectedInvoice: {},
   selectedFees: {},
@@ -10,12 +13,34 @@ const useStore = create((set, get) => ({
   users: [],
   selectedUser: {},
 
+  //invoices
+
+  fetchInvoices: async (params) => {
+    try {
+      const { data: invoices } = await axios.get(
+        `${process.env.REACT_APP_BASE_URL}/invoices/get_data.php`
+      );
+      if (!!invoices && invoices.length > 0) {
+        get().setInvoices(invoices);
+        set(() => ({ fetchedInvoices: invoices }));
+        if (params && params.autoSelect) {
+          get().setSelectedInvoice(invoices[0]);
+        } else if (params && params.selectNumber) {
+          const index = invoices.findIndex(
+            (invoice) => invoice.invoice_number === params.selectNumber
+          );
+          get().setSelectedInvoice(invoices[index]);
+        }
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
   setInvoices: (invoices) => set(() => ({ invoices: invoices })),
   setFees: (fees) => set(() => ({ fees: fees })),
 
   selectInvoice: (invoiceNumber) => {
-    console.log("OH SI SELEZIONA IL CULO");
-    console.log(invoiceNumber);
     if (!!invoiceNumber) {
       const invoice = get().invoices.find(
         (i) => i.invoice_number === invoiceNumber
@@ -33,10 +58,29 @@ const useStore = create((set, get) => ({
       get().setSelectedFee(invoice.fees);
     }
   },
+
+  filterInvoices: (invoiceNumber) => {
+    const trimmedInvoiceNumber = invoiceNumber.trim().replace(" ", "");
+    if (trimmedInvoiceNumber === "") {
+      console.log("DONT DO ANYTHING");
+      get().setInvoices(get().fetchedInvoices);
+      return;
+    }
+    const filtered = get().fetchedInvoices.filter((i) =>
+      i.invoice_number.includes(trimmedInvoiceNumber)
+    );
+    get().setInvoices(filtered);
+  },
+
+  //fees
   setSelectedFee: (fee) => set(() => ({ selectedFees: fee })),
 
+  //users
   setUsers: (users) => set(() => ({ users: users })),
   setSelectedUser: (user) => set(() => ({ selectedUser: user })),
+
+  //payments
+  setPaymentDetails: (payment) => set(() => ({ paymentDetails: payment })),
 }));
 
 export default useStore;

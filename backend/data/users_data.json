@@ -6,7 +6,15 @@
       "image": "john.jpg",
       "email": "john.doe@test.com",
       "date_of_birth": "1980-10-15",
-      "payment_amount": 1200
+      "payment_details": {
+        "payment_amount": 1660.52,
+        "payment_date": "2010-12-12",
+        "payment_invoice_number": "",
+        "payment_reference_number": "XZF71",
+        "payment_currency": "EUR",
+        "payment_status": "completed",
+        "payment_purpose": ""
+      }
     },
     {
       "first_name": "Gina",
@@ -14,7 +22,15 @@
       "image": "gina.jpg",
       "email": "gina.daniels@test.com",
       "date_of_birth": "1986-08-03",
-      "payment_amount": 500
+      "payment_details": {
+        "payment_amount": 1200,
+        "payment_date": "2010-12-12",
+        "payment_invoice_number": "",
+        "payment_reference_number": "XZF71",
+        "payment_currency": "EUR",
+        "payment_status": "completed",
+        "payment_purpose": ""
+      }
     },
     {
       "first_name": "Ethan",
@@ -22,7 +38,16 @@
       "image:": "ethan.jpg",
       "email": "ethan.davidson@test.com",
       "date_of_birth": "1990-11-10",
-      "payment_amount": 85
+      "payment_amount": 85,
+      "payment_details": {
+        "payment_amount": 1200,
+        "payment_date": "2010-12-12",
+        "payment_invoice_number": "",
+        "payment_reference_number": "XZF71",
+        "payment_currency": "EUR",
+        "payment_status": "completed",
+        "payment_purpose": ""
+      }
     }
   ]
 }
