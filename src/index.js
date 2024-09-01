@@ -25,6 +25,9 @@ import {
   faCloud,
   faXmark,
   faCheckToSlot,
+  faUser,
+  faChevronUp,
+  faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -46,7 +49,10 @@ library.add(
   faDatabase,
   faCloud,
   faXmark,
-  faCheckToSlot
+  faCheckToSlot,
+  faUser,
+  faChevronUp,
+  faChevronDown
 );
 
 const theme = createTheme({

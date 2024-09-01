@@ -4,6 +4,7 @@ import dateFormatter from "../../utils/dateFormatter";
 import styles from "../../styles/DataRenderers.module.scss";
 import PaymentDetailsMobileEntry from "./PaymentDetailsMobileEntry";
 import { priceFormatter } from "../../utils/priceFormatter";
+import Icon from "../Icon";
 
 function PaymentDetailsMobile() {
   const {
@@ -13,31 +14,40 @@ function PaymentDetailsMobile() {
     payment_status: status,
   } = useStore((store) => store.paymentDetails);
 
+  const togglePaymentDetails = useStore(
+    (store) => store.togglePaymentDetailsMobile
+  );
+
+  const paymentDetailsVisible = useStore(
+    (store) => store.paymentDetailsMobileVisible
+  );
+
   return (
     <div className={styles.paymentDetailsMobile}>
-      <div className={styles.paymentDetailsMobile__payments}>
-        <PaymentDetailsMobileEntry
-          icon="database"
-          name="Current amount"
-          value={`${priceFormatter(amount)} €`}
+      {paymentDetailsVisible && (
+        <div className={styles.paymentDetailsMobile__payments}>
+          <PaymentDetailsMobileEntry
+            icon="database"
+            name="Current amount"
+            value={`${priceFormatter(amount)} €`}
+          />
+          <PaymentDetailsMobileEntry
+            icon="calendar"
+            name="Payment Date"
+            value={dateFormatter(date)}
+          />
+          <PaymentDetailsMobileEntry
+            icon="fa-check-to-slot"
+            name="Payment Status"
+            value={status}
+          />
+        </div>
+      )}
+      <div className={styles.paymentDetailsMobile__chevron}>
+        <Icon
+          icon={paymentDetailsVisible ? "chevron-up" : "chevron-down"}
+          click={togglePaymentDetails}
         />
-        <PaymentDetailsMobileEntry
-          icon="calendar"
-          name="Payment Date"
-          value={dateFormatter(date)}
-        />
-        <PaymentDetailsMobileEntry
-          icon="fa-check-to-slot"
-          name="Payment Status"
-          value={status}
-        />
-        {/* <p className={styles.paymentDetailsMobile__amount}>
-          {" "}
-          Current amount: {amount} €
-        </p>
-        <p>Payment Date: {dateFormatter(date)} </p>
-        <p>Reference Number: {reference_number} </p>
-        <p>Payment Status: {status} </p> */}
       </div>
       <div />
     </div>

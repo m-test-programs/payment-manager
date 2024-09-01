@@ -16,7 +16,7 @@ function DashboardBodyPaymentInfo() {
   return (
     <div className={styles.paymentInfo}>
       <CardContainer
-        title="Invoice"
+        title="Invoice Details"
         info={{ title: "Invoice", text: infoData.invoice }}
       >
         <Invoice />
@@ -26,6 +26,7 @@ function DashboardBodyPaymentInfo() {
         toolbar={{
           search: {
             method: filterInvoices,
+            placeholder: "Search Invoices",
           },
         }}
         info={{ title: "Invoices List", text: infoData.invoiceList }}

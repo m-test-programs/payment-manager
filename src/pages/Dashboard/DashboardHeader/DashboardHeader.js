@@ -5,11 +5,23 @@ import DashboardHeaderNav from "./DashboardHeaderNav";
 import Icon from "../../../components/Icon";
 import useStore from "../../../store/store";
 import PaymentDetailsMobile from "../../../components/DataRenderers/PaymentDetailsMobile";
+import { variables } from "../../../utils/variables";
 
 function DashboardHeader() {
   const isMobile = useStore((store) => store.isMobile);
+
+  const paymentDetailsVisible = useStore(
+    (store) => store.paymentDetailsMobileVisible
+  );
+
+  const headerStyle = {
+    height: paymentDetailsVisible
+      ? variables.headerMobileHeightExtended
+      : variables.headerMobileHeight,
+  };
+
   return (
-    <div className={styles.header}>
+    <div className={styles.header} style={isMobile.matches ? headerStyle : {}}>
       <DashboardHeaderTopbar />
       <DashboardHeaderNav />
       {isMobile.matches && <PaymentDetailsMobile />}

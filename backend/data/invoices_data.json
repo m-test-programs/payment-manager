@@ -6,6 +6,7 @@
             "invoice_user_id": "372",
             "invoice_assigned": false,
             "invoice_amount": null,
+            "invoice_assigned_to_fullname": "",
             "fees": {
                 "platform_fee": "9",
                 "spedition_fee": "12",
@@ -19,6 +20,7 @@
             "invoice_user_id": "372",
             "invoice_assigned": false,
             "invoice_amount": null,
+            "invoice_assigned_to_fullname": "",
             "fees": {
                 "platform_fee": "16",
                 "spedition_fee": "30",
@@ -32,6 +34,7 @@
             "invoice_user_id": "372",
             "invoice_assigned": false,
             "invoice_amount": null,
+            "invoice_assigned_to_fullname": "",
             "fees": {
                 "platform_fee": "18",
                 "spedition_fee": "22",
@@ -43,8 +46,9 @@
             "invoice_number": "484D6-1194",
             "invoice_date": "2023-05-06",
             "invoice_user_id": "372",
-            "invoice_assigned": true,
-            "invoice_amount": "1660.52",
+            "invoice_assigned": false,
+            "invoice_amount": null,
+            "invoice_assigned_to_fullname": "",
             "fees": {
                 "platform_fee": "11",
                 "spedition_fee": "15",
@@ -58,6 +62,7 @@
             "invoice_user_id": "372",
             "invoice_assigned": false,
             "invoice_amount": null,
+            "invoice_assigned_to_fullname": "",
             "fees": {
                 "platform_fee": "11",
                 "spedition_fee": "15",
@@ -71,6 +76,7 @@
             "invoice_user_id": "372",
             "invoice_assigned": false,
             "invoice_amount": null,
+            "invoice_assigned_to_fullname": "",
             "fees": {
                 "platform_fee": "11",
                 "spedition_fee": "15",

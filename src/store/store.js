@@ -15,11 +15,19 @@ const useStore = create((set, get) => ({
   users: [],
   selectedUser: {},
 
+  //media queries
   isMobile: window.matchMedia(`(max-width: ${variables.breakPointMobile})`),
+
+  //errors
+  connectionError: false,
+  connectionErrorMessage: {},
 
   //summary
   summaryDialog: false,
   summaryDialogMode: "",
+
+  //layout and design
+  paymentDetailsMobileVisible: true,
 
   //invoices
 
@@ -45,6 +53,7 @@ const useStore = create((set, get) => ({
       }
     } catch (err) {
       console.log(err);
+      get().setConnectionError(true, err);
     }
   },
 
@@ -56,15 +65,12 @@ const useStore = create((set, get) => ({
       const invoice = get().invoices.find(
         (i) => i.invoice_number === invoiceNumber
       );
-      console.log(invoice);
       get().setSelectedInvoice(invoice);
     }
   },
 
   setSelectedInvoice: (invoice) => {
     if (!!invoice) {
-      console.log("fees");
-      console.log(invoice.fees);
       set(() => ({ selectedInvoice: invoice }));
       get().setSelectedFee(invoice.fees);
     }
@@ -86,8 +92,28 @@ const useStore = create((set, get) => ({
   setSelectedFee: (fee) => set(() => ({ selectedFees: fee })),
 
   //users
+
+  fetchUsers: async () => {
+    try {
+      const { data: users } = await axios.get(
+        `${process.env.REACT_APP_BASE_URL}/users/get_data.php`
+      );
+      if (!!users && users.length > 0) {
+        get().setUsers(users);
+        get().setSelectedUser(users[0]);
+        // get().setPaymentDetails(users[0].payment_details);
+      }
+    } catch (error) {
+      get().setConnectionError(true, error);
+      console.log(error);
+    }
+  },
+
   setUsers: (users) => set(() => ({ users: users })),
-  setSelectedUser: (user) => set(() => ({ selectedUser: user })),
+  setSelectedUser: (user) => {
+    set(() => ({ selectedUser: user }));
+    get().setPaymentDetails(user.payment_details);
+  },
 
   //payments
   setPaymentDetails: (payment) => set(() => ({ paymentDetails: payment })),
@@ -144,6 +170,22 @@ const useStore = create((set, get) => ({
     } catch (error) {
       console.log(error);
     }
+  },
+
+  //layout
+  togglePaymentDetailsMobile: () => {
+    set({
+      paymentDetailsMobileVisible: !get().paymentDetailsMobileVisible,
+    });
+  },
+
+  //connection error
+  setConnectionError: (value, message) => {
+    console.log(value);
+    set({
+      connectionError: value,
+      connectionErrorMessage: message,
+    });
   },
 }));
 

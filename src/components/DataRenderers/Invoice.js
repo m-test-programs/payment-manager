@@ -29,10 +29,9 @@ function Invoice() {
             : "Not assigned"
         }`}
       />
-
       <div className={styles.buttons}>
         <CustomButton
-          click={() => openDialog("assign")}
+          click={() => invoice?.invoice_number && openDialog("assign")}
           title="Assign Price"
           disabled={invoice.invoice_assigned}
         />

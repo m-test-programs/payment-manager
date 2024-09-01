@@ -8,18 +8,21 @@
   min-height: 5rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  .titleWrapper {
+  &__titleWrapper {
     display: flex;
     gap: 1rem;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1.2rem;
   }
-  .cardTitle {
+  &__cardTitle {
     font-size: 1.2rem;
     margin: 0;
     padding: 0;
-    flex: 1;
+    flex: 3;
+  }
+  &__input {
+    flex: 2;
   }
   .info {
     width: 1rem;
@@ -62,8 +65,8 @@
     font-size: $paragraphSmall;
   }
   .imageWrapper {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.6rem;
+    height: 1.6rem;
     border-radius: 100%;
     overflow: hidden;
     img {

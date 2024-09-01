@@ -14,7 +14,6 @@ function InvoiceListEntry(props) {
   const classes = `${styles.invoiceEntry} ${isSelected && effects.highlighted}`;
 
   const selectInvoice = (number) => {
-    console.log("seletta");
     select(number);
   };
 
