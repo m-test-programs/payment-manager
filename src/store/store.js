@@ -14,6 +14,10 @@ const useStore = create((set, get) => ({
   users: [],
   selectedUser: {},
 
+  //summary
+  summaryDialog: false,
+  summaryDialogMode: "",
+
   //invoices
 
   fetchInvoices: async (params) => {
@@ -66,7 +70,6 @@ const useStore = create((set, get) => ({
   filterInvoices: (invoiceNumber) => {
     const trimmedInvoiceNumber = invoiceNumber.trim().replace(" ", "");
     if (trimmedInvoiceNumber === "") {
-      console.log("DONT DO ANYTHING");
       get().setInvoices(get().fetchedInvoices);
       return;
     }
@@ -87,6 +90,58 @@ const useStore = create((set, get) => ({
   setPaymentDetails: (payment) => set(() => ({ paymentDetails: payment })),
 
   //summary
+
+  openSummaryDialog: (mode) =>
+    set(() => ({
+      summaryDialog: true,
+      summaryDialogMode: mode,
+    })),
+
+  closeSummaryDialog: () =>
+    set(() => ({
+      summaryDialog: false,
+      summaryDialogMode: "",
+    })),
+
+  //assign and remove price
+
+  assignPrice: async () => {
+    try {
+      await axios.post(
+        `${process.env.REACT_APP_BASE_URL}/invoices/edit_data.php`,
+        new URLSearchParams({
+          invoice_number: get().selectedInvoice.invoice_number,
+          payment_amount: get().paymentDetails.payment_amount,
+        })
+      );
+      get().fetchInvoices({
+        selectNumber: get().selectedInvoice.invoice_number,
+      });
+      get().closeSummaryDialog();
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  removePrice: async () => {
+    try {
+      await axios.delete(
+        `${process.env.REACT_APP_BASE_URL}/invoices/edit_data.php`,
+        {
+          params: {
+            invoice_number: get().selectedInvoice.invoice_number,
+          },
+        }
+      );
+      get().fetchInvoices({
+        selectNumber: get().selectedInvoice.invoice_number,
+      });
+
+      get().closeSummaryDialog();
+    } catch (error) {
+      console.log(error);
+    }
+  },
 }));
 
 export default useStore;

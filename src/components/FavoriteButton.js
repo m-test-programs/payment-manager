@@ -5,9 +5,9 @@ import { faStar as fullStar } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/Components.module.scss";
 
 function FavoriteButton(props) {
-  const { isFavorite } = props;
+  const { isFavorite, click } = props;
   return (
-    <div className={styles.favoriteButton}>
+    <div className={styles.favoriteButton} onClick={click}>
       <FontAwesomeIcon icon={isFavorite ? fullStar : emptyStar} />
     </div>
   );

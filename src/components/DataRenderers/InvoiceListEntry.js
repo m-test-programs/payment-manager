@@ -9,6 +9,8 @@ function InvoiceListEntry(props) {
 
   const select = useStore((store) => store.selectInvoice);
 
+  const openDialog = useStore((store) => store.openSummaryDialog);
+
   const classes = `${styles.invoiceEntry} ${isSelected && effects.highlighted}`;
 
   const selectInvoice = (number) => {
@@ -22,7 +24,10 @@ function InvoiceListEntry(props) {
       onClick={!isSelected ? () => selectInvoice(number) : null}
     >
       <div className={styles.invoiceEntry__firstRow}>
-        <FavoriteButton isFavorite={isFavorite} />
+        <FavoriteButton
+          isFavorite={isFavorite}
+          click={() => openDialog(isSelected ? "remove" : "assign")}
+        />
         <p>Invoice Number: {number} </p>
       </div>
       <div className={styles.invoiceEntry__secondRow}>

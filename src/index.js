@@ -22,6 +22,8 @@ import {
   faShop,
   faHashtag,
   faDatabase,
+  faCloud,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -40,7 +42,9 @@ library.add(
   faMoneyBill,
   faShop,
   faHashtag,
-  faDatabase
+  faDatabase,
+  faCloud,
+  faXmark
 );
 
 const theme = createTheme({

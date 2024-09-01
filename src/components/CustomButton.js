@@ -11,6 +11,7 @@ function CustomButton(props) {
       disabled={disabled}
       fullWidth={fullWidth}
       onClick={click}
+      sx={{ marginTop: "0.8rem" }}
     >
       {title}
     </Button>

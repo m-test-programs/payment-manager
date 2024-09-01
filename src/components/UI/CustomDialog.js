@@ -4,9 +4,11 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
+  IconButton,
 } from "@mui/material";
 import React from "react";
 import CustomButton from "../CustomButton";
+import Icon from "../Icon";
 
 function CustomDialog(props) {
   const {
@@ -27,14 +29,32 @@ function CustomDialog(props) {
     onClose(selectedValue);
   };
 
+  const sx = {
+    // backgroundColor: "var(--dark)",
+    // color: "#ffff",
+    // marginBottom: "1rem",
+  };
+
   return (
     <Dialog onClose={handleClose} open={open} fullWidth={fullWidth}>
-      <DialogTitle>
+      <DialogTitle sx={{ m: 0, p: 2 }}>
         {" "}
         <span style={titleStyle}>{title}</span>{" "}
         {titleAddon && <span style={titleAddonStyle}>{titleAddon}</span>}
       </DialogTitle>
-      <DialogContent>
+      <IconButton
+        aria-label="close"
+        onClick={handleClose}
+        sx={(theme) => ({
+          position: "absolute",
+          right: 8,
+          top: 8,
+          color: theme.palette.grey[500],
+        })}
+      >
+        <Icon icon="fa-xmark" />
+      </IconButton>
+      <DialogContent dividers>
         {errorMessage && (
           <Alert variant="filled" severity="error">
             {errorMessage}

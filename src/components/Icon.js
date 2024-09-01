@@ -6,7 +6,11 @@ function Icon(props) {
   const { icon, customStyle, label, size, sx, click } = props;
   return (
     <div className={styles.icon} style={{ ...customStyle }}>
-      <FontAwesomeIcon icon={icon} style={sx} onClick={() => click()} />
+      <FontAwesomeIcon
+        icon={icon}
+        style={sx}
+        onClick={() => click && click()}
+      />
       {label && (
         <p
           className={
