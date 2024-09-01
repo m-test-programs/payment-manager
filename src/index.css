@@ -43,6 +43,11 @@ code {
     monospace;
 }
 
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 72%;
+  }
+}
 @media only screen and (max-width: 600px) {
   html {
     font-size: 65.5%;

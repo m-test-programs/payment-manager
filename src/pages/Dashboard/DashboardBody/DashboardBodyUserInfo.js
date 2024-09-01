@@ -5,13 +5,18 @@ import CustomerDetails from "../../../components/DataRenderers/CustomerDetails";
 import CustomButton from "../../../components/CustomButton";
 import PaymentDetails from "../../../components/DataRenderers/PaymentDetails";
 import Paragraph from "../../../components/UI/Paragraph";
+import useStore from "../../../store/store";
 
 function DashboardBodyUserInfo() {
+  const isMobile = useStore((store) => store.isMobile);
+
   return (
     <div className={styles.userInfo}>
-      <CardContainer title="Payment Details">
-        <PaymentDetails />
-      </CardContainer>
+      {!isMobile.matches && (
+        <CardContainer title="Payment Details">
+          <PaymentDetails />
+        </CardContainer>
+      )}
       <CardContainer title="Customer Details">
         <CustomerDetails />
       </CardContainer>

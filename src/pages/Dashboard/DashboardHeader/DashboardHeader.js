@@ -3,12 +3,16 @@ import styles from "../../../styles/Dashboard.module.scss";
 import DashboardHeaderTopbar from "./DashboardHeaderTopbar";
 import DashboardHeaderNav from "./DashboardHeaderNav";
 import Icon from "../../../components/Icon";
+import useStore from "../../../store/store";
+import PaymentDetailsMobile from "../../../components/DataRenderers/PaymentDetailsMobile";
 
 function DashboardHeader() {
+  const isMobile = useStore((store) => store.isMobile);
   return (
     <div className={styles.header}>
       <DashboardHeaderTopbar />
       <DashboardHeaderNav />
+      {isMobile.matches && <PaymentDetailsMobile />}
       <div className={styles.back}>
         <Icon
           icon="chevron-left"

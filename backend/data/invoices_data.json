@@ -43,8 +43,8 @@
             "invoice_number": "484D6-1194",
             "invoice_date": "2023-05-06",
             "invoice_user_id": "372",
-            "invoice_assigned": false,
-            "invoice_amount": null,
+            "invoice_assigned": true,
+            "invoice_amount": "1660.52",
             "fees": {
                 "platform_fee": "11",
                 "spedition_fee": "15",
@@ -56,8 +56,8 @@
             "invoice_number": "484D6-1195",
             "invoice_date": "2023-05-06",
             "invoice_user_id": "372",
-            "invoice_assigned": true,
-            "invoice_amount": "1660.52",
+            "invoice_assigned": false,
+            "invoice_amount": null,
             "fees": {
                 "platform_fee": "11",
                 "spedition_fee": "15",

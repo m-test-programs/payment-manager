@@ -7,7 +7,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 2rem;
+  }
   @media (max-width: $breakpoint-mobile) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    margin-top: $headerMobileHeight;
   }
 }

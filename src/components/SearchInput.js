@@ -15,6 +15,7 @@ function SearchInput() {
     <div>
       <OutlinedInput
         placeholder="Search customer"
+        fullWidth
         sx={customStyle}
         startAdornment={
           <InputAdornment position="start">

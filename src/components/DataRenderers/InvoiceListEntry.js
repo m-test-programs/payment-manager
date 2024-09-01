@@ -26,7 +26,7 @@ function InvoiceListEntry(props) {
       <div className={styles.invoiceEntry__firstRow}>
         <FavoriteButton
           isFavorite={isFavorite}
-          click={() => openDialog(isSelected ? "remove" : "assign")}
+          click={() => openDialog(isFavorite ? "remove" : "assign")}
         />
         <p>Invoice Number: {number} </p>
       </div>

@@ -42,6 +42,32 @@
   }
 }
 
+.paymentDetailsMobile {
+  text-align: center;
+  color: white;
+  &__payments {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  &__entry {
+    display: flex;
+    border: 1px dashed white;
+    // background: white;
+    // color: var(--dark);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    flex-direction: column;
+    align-items: center;
+    p {
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+}
+
 .buttons {
   display: flex;
   gap: 10px;

@@ -10,11 +10,8 @@ function PaymentDetails() {
   const {
     payment_amount: amount,
     payment_date: date,
-    payment_invoice_number: invoice_number,
     payment_reference_number: reference_number,
-    payment_currency: currency,
     payment_status: status,
-    payment_purpose: purpose,
   } = useStore((store) => store.paymentDetails);
 
   return (
@@ -25,12 +22,6 @@ function PaymentDetails() {
       <p>Payment Date: {dateFormatter(date)} </p>
       <p>Reference Number: {reference_number} </p>
       <p>Payment Status: {status} </p>
-      {/* <p className={styles.paymentDetails__amount}>
-        Payment amount: {amount} €{" "}
-      </p>
-      <p>Date: {dateFormatter(date)} </p>
-      <p>Reference Number: {reference_number} </p>
-      <p>Payment Status: {status} </p> */}
       <CustomButton color="primary" title="Payment Details PDF" fullWidth />
     </div>
   );

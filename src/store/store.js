@@ -1,5 +1,6 @@
 import axios from "axios";
 import { create } from "zustand";
+import { variables } from "../utils/variables";
 
 const useStore = create((set, get) => ({
   fetchedInvoices: [],
@@ -13,6 +14,8 @@ const useStore = create((set, get) => ({
 
   users: [],
   selectedUser: {},
+
+  isMobile: window.matchMedia(`(max-width: ${variables.breakPointMobile})`),
 
   //summary
   summaryDialog: false,
