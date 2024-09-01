@@ -65,9 +65,11 @@
     flex: 0;
   }
 }
-
 .userInfo {
   flex: 1;
+  @media (max-width: $breakpoint-tablet) {
+    flex: 2;
+  }
 }
 
 .helpImage {

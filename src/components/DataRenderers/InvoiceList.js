@@ -11,12 +11,14 @@ function InvoiceList() {
   return (
     <div className={styles.invoices}>
       {invoices.map((invoice) => (
-        <InvoiceListEntry
-          isSelected={invoice.invoice_number === selected.invoice_number}
-          isFavorite={invoice.invoice_assigned}
-          number={invoice.invoice_number}
-          date={dateFormatter(invoice.invoice_date)}
-        />
+        <React.Fragment key={invoice.invoice_number}>
+          <InvoiceListEntry
+            isSelected={invoice.invoice_number === selected.invoice_number}
+            isFavorite={invoice.invoice_assigned}
+            number={invoice.invoice_number}
+            date={dateFormatter(invoice.invoice_date)}
+          />
+        </React.Fragment>
       ))}
     </div>
   );

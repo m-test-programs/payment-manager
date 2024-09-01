@@ -66,7 +66,7 @@ function CardContainer(props) {
             </div>
           )}
           {info && (
-            <div className={styles.info}>
+            <div className={styles.card__info}>
               <Icon
                 icon="circle-info"
                 sx={{ cursor: "pointer" }}

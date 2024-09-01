@@ -102,7 +102,7 @@ function FeesDisplayer(props) {
       />
       <FeeDisplayerEntry
         fee={fees.payment_processor_fee}
-        label="Payment processor"
+        label="Payment provider"
         icon="credit-card"
       />
       <FeeDisplayerEntry fee={fees.taxes_fee} label="Taxes" icon="money-bill" />

@@ -3,7 +3,6 @@ import styles from "../../../styles/DashboardHeader.module.scss";
 import IconBadge from "../../../components/IconBadge";
 import Icon from "../../../components/Icon";
 import UserBadge from "../../../components/UserBadge";
-import SearchInput from "../../../components/SearchInput";
 import SearchInputAsync from "../../../components/SearchInputAsync";
 import { Box } from "@mui/material";
 import useStore from "../../../store/store";
@@ -60,11 +59,12 @@ function DashboardHeaderTopbar() {
       <div className={styles.topBar__search}>
         <div className={styles.topBar__titleWrapper}>
           <IconBadge icon="dollar-sign" />
-          <h3 className={styles.topBar__title}>Easy Payments Dashboard</h3>
+          <h3 className={styles.topBar__title}>Payment Manager Dashboard</h3>
         </div>
         <div className={styles.topBar__searchInput}>
           <SearchInputAsync
             inputStyle={inputStyle}
+            placeholder="Search Customer"
             renderOptionComponent={ListOption}
             optionLabel="full_name"
             optionKey="user_id"

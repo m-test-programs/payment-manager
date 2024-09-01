@@ -8,9 +8,9 @@
             "invoice_amount": null,
             "invoice_assigned_to_fullname": "",
             "fees": {
-                "platform_fee": "9",
-                "spedition_fee": "12",
-                "payment_processor_fee": "14",
+                "platform_fee": "5",
+                "spedition_fee": "16",
+                "payment_processor_fee": "19",
                 "taxes_fee": "10"
             }
         },

@@ -5,7 +5,7 @@ function Paragraph(props) {
   const { children, size } = props;
   return (
     <div
-      class={
+      className={
         size && size === "small" ? styles.paragraphSmall : styles.paragraph
       }
     >

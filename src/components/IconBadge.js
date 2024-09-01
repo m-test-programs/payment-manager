@@ -5,7 +5,7 @@ import styles from "../styles/Components.module.scss";
 function IconBadge(props) {
   const { icon } = props;
   return (
-    <div class={styles.iconBadge}>
+    <div className={styles.iconBadge}>
       <FontAwesomeIcon icon={icon} />
     </div>
   );

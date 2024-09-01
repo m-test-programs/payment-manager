@@ -23,7 +23,7 @@ function DashboardBodyUserInfo() {
       <CardContainer title="Need help?">
         <img
           className={styles.helpImage}
-          src="/images/assistance.png"
+          src="images/assistance.png"
           alt="assistance"
         />
         <Paragraph size="small">

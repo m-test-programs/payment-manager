@@ -29,12 +29,6 @@ function CustomDialog(props) {
     onClose(selectedValue);
   };
 
-  const sx = {
-    // backgroundColor: "var(--dark)",
-    // color: "#ffff",
-    // marginBottom: "1rem",
-  };
-
   return (
     <Dialog onClose={handleClose} open={open} fullWidth={fullWidth}>
       <DialogTitle sx={{ m: 0, p: 2 }}>
@@ -66,6 +60,7 @@ function CustomDialog(props) {
         {!!actions &&
           actions.map((action) => (
             <CustomButton
+              key={action.title}
               title={action.title}
               variant="contained"
               size={action.size || "small"}

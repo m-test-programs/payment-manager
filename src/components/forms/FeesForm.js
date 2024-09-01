@@ -13,7 +13,7 @@ function FeesForm(props) {
     <div className={styles.fees}>
       <form action="">
         <CustomInput
-          label="Platform costs"
+          label="Platform costs (%)"
           onChange={(e) => updateForm("platform", e.target.value)}
           onBlur={(e) => sanitizeInput("platform", e.target.value)}
           min={0}
@@ -22,21 +22,21 @@ function FeesForm(props) {
           value={platform}
         />
         <CustomInput
-          label="Spedition costs"
+          label="Spedition costs(%)"
           onChange={(e) => updateForm("spedition", e.target.value)}
           onBlur={(e) => sanitizeInput("spedition", e.target.value)}
           type="number"
           value={spedition}
         />
         <CustomInput
-          label="Payment Processor cost"
+          label="Payment Provider costs (%)"
           onChange={(e) => updateForm("processor", e.target.value)}
           onBlur={(e) => sanitizeInput("processor", e.target.value)}
           type="number"
           value={processor}
         />
         <CustomInput
-          label="Taxes"
+          label="Taxes(%)"
           onChange={(e) => updateForm("taxes", e.target.value)}
           onBlur={(e) => sanitizeInput("taxes", e.target.value)}
           type="number"

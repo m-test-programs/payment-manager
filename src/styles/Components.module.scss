@@ -1,4 +1,5 @@
 @use "typography" as *;
+@use "_variables" as *;
 
 .card {
   padding: 1rem;
@@ -24,8 +25,13 @@
   &__input {
     flex: 2;
   }
-  .info {
+  &__info {
     width: 1rem;
+    svg {
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 1.2rem;
+      }
+    }
   }
 }
 
