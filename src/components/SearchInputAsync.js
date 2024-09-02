@@ -10,6 +10,8 @@ import Icon from "./UI/Icon";
 import axios from "axios";
 import useStore from "../store/store";
 
+// Built on AutocompleteAsync Mui Component, please see documentation: https://mui.com/material-ui/react-autocomplete/
+
 function SearchInputAsync(props) {
   const {
     optionLabel,
@@ -85,7 +87,6 @@ function SearchInputAsync(props) {
             />
           );
         }}
-        // onInputChange={(e, value) => onInputChange(value)}
         onChange={(e, value) =>
           value && onInputChange(useObjectAsValue ? value : value[optionKey])
         }

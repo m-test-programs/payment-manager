@@ -4,6 +4,11 @@ include "../index.php";
 
 $data =  json_decode(file_get_contents("../data/invoices_data.json"));
 
+/*
+Modify the values associated with each fee based on the data provided in the body. 
+The selection of the correct element is done in a manner similar to edit_data.php.
+*/
+
 if ($_SERVER['REQUEST_METHOD'] === "POST"){
     $invoice_number = $_POST['invoice_number'];
 

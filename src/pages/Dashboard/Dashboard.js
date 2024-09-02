@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import DashboardHeader from "./DashboardHeader/DashboardHeader";
 import styles from "../../styles/Dashboard.module.scss";
 import DashboardBody from "./DashboardBody/DashboardBody";
-import axios from "axios";
 
 import useStore from "../../store/store";
 import CustomDialog from "../../components/UI/CustomDialog";
@@ -20,6 +19,10 @@ function Dashboard() {
 
   return (
     <div className={styles.container}>
+      {/* 
+        The two dialogs, connectionError and CustomDialog, are included in the main component and managed 
+        through the store so that they can be activated and rendered in multiple parts of the application. */}
+
       <ConnectionError />
       <CustomDialog
         open={dialogOpen}

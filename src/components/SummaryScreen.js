@@ -2,10 +2,16 @@ import React from "react";
 import styles from "../styles/Components.module.scss";
 import useStore from "../store/store";
 import CardContainer from "../components/CardContainer";
-import { Alert, Card } from "@mui/material";
+import { Alert } from "@mui/material";
 import FeesDisplayer from "./DataRenderers/FeesDisplayer";
 
 function SummaryScreen(props) {
+  /*
+  The component provides a summary of payment details and cost breakdown. 
+  If the payment is already assigned to an invoice, an alert message is displayed. 
+  The user can choose to either finalize the operation or cancel.
+  */
+
   const { mode } = props;
   const { invoice_number } = useStore((store) => store.selectedInvoice);
   const assignedInvoiceNumber = useStore(

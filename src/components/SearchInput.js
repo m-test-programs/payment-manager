@@ -7,6 +7,8 @@ import {
 import React from "react";
 import Icon from "./UI/Icon";
 
+// Built on Autocomplete Mui Component, please see documentation: https://mui.com/material-ui/react-autocomplete/
+
 function SearchInput(props) {
   const {
     options,

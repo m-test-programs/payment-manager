@@ -24,8 +24,10 @@ function DashboardHeader() {
     <div className={styles.header} style={isMobile.matches ? headerStyle : {}}>
       <DashboardHeaderTopbar />
       <DashboardHeaderNav />
+
       {isMobile.matches && <PaymentDetailsMobile />}
       <div className={styles.back}>
+        {/* PaymentDetailsMobile component is rendered only on mobile devices. */}
         <Icon
           icon="chevron-left"
           customStyle={{ color: "#fff", fontSize: "0.6rem" }}

@@ -5,7 +5,6 @@ import CustomButton from "../UI/CustomButton";
 import CustomDialog from "../UI/CustomDialog";
 import { useState } from "react";
 import FeesForm from "../forms/FeesForm";
-import axios from "axios";
 
 function FeesDisplayer(props) {
   const { mode } = props;
@@ -27,8 +26,8 @@ function FeesDisplayer(props) {
   const sanitizeInput = (type, value) => {
     if (value < 0) {
       updateForm(type, 0);
-    } else if (value > 100) {
-      updateForm(type, 100);
+    } else if (value > 99) {
+      updateForm(type, 99);
     }
   };
 

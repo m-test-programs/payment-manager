@@ -10,6 +10,8 @@ import useStore from "../../../store/store";
 function ListOption(props) {
   const { optionProps, option, key } = props;
 
+  const user = useStore((store) => store.selectedUser);
+
   const imgStyle = {
     width: "1.4rem",
     height: "1.4rem",
@@ -23,7 +25,15 @@ function ListOption(props) {
       key={key}
       component="li"
       {...optionProps}
-      sx={{ display: "flex", alignItems: "center", gap: "5px" }}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        gap: "5px",
+        background:
+          user.user_id === option.user_id
+            ? "var(--back-transparent) !important"
+            : "",
+      }}
     >
       <img src={`images/${option.image}`} alt="user-image" style={imgStyle} />{" "}
       <span>

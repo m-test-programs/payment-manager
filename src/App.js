@@ -18,6 +18,7 @@ function App() {
   }, []);
 
   return (
+    // Display a loading screen until the data has finished loading. The state is managed within the store.
     <MainContainer>
       {dataReady ? <Dashboard /> : <LoadingScreen />}
     </MainContainer>

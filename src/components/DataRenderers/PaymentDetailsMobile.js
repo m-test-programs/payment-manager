@@ -10,7 +10,6 @@ function PaymentDetailsMobile() {
   const {
     payment_amount: amount,
     payment_date: date,
-    payment_reference_number: reference_number,
     payment_status: status,
   } = useStore((store) => store.paymentDetails);
 

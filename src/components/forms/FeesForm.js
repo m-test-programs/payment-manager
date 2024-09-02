@@ -9,6 +9,11 @@ function FeesForm(props) {
     sanitizeInput,
   } = props;
 
+  /* 
+  sanitizeInput helps correct any "errors" in the value input to ensure that it remains within the range of 0 to 99.
+  If the total value exceeds 99 points, an error message is displayed.
+  */
+
   return (
     <div className={styles.fees}>
       <form action="">

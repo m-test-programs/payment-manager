@@ -14,10 +14,3 @@ if(is_numeric($index)){
 }
 
 echo json_encode($data);
-
-
-// $invoices = $data->invoices;
-
-
-
-// echo(json_encode($invoices));

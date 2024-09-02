@@ -4,6 +4,13 @@ include "../index.php";
 
 $data =  json_decode(file_get_contents("../data/invoices_data.json"));
 
+/*
+The endpoint accepts POST and DELETE requests (e.g., axios.post() // axios.delete()). 
+In the first case, it updates the invoices_data file (specifically, it associates the price with the selected invoice). 
+In the second case, it removes the price. 
+The invoice is selected based on the invoice number (passed in the request body in the first case and as a parameter in the second) using the array_search and array_column functions.
+*/
+
 if ($_SERVER['REQUEST_METHOD'] === "POST"){
     $invoice_number = $_POST['invoice_number'];
     $invoice_price = $_POST['payment_amount'];
