@@ -2,8 +2,6 @@
 
 You can access a live and working version of the application at the following address: https://digitalinland.eu/apps/payment-manager.
 
-You can also clone the code from the following repository and start it locally:
-
 ## Prerequisites
 
 To run the application locally, make sure you have the following programs installed:
