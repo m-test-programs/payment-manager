@@ -7,8 +7,7 @@ function DashboardHeaderNav() {
       <nav>
         <ul>
           <li>Home</li>
-          <li>Payments</li>
-          <li className={styles.selected}>Billings</li>
+          <li className={styles.selected}>Payments</li>
           <li>Balances</li>
           <li>Customers</li>
           <li>Products</li>

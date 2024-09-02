@@ -100,6 +100,23 @@ const useStore = create((set, get) => ({
   //fees
   setSelectedFee: (fee) => set(() => ({ selectedFees: fee })),
 
+  saveFees: async (payload) => {
+    try {
+      await axios.post(
+        `${process.env.REACT_APP_BASE_URL}/invoices/edit_fees.php`,
+        new URLSearchParams(payload)
+      );
+
+      get().fetchInvoices({
+        selectNumber: get().selectedInvoice.invoice_number,
+      });
+
+      return Promise.resolve();
+    } catch (err) {
+      return Promise.reject(err);
+    }
+  },
+
   //users
 
   fetchUsers: async () => {

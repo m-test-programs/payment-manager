@@ -7,7 +7,7 @@ import FeesDisplayer from "../../../components/DataRenderers/FeesDisplayer";
 import useStore from "../../../store/store";
 import { infoData } from "../../../utils/infoData";
 
-function DashboardBodyPaymentInfo() {
+function DashboardBodyInvoiceInfo() {
   const filter = useStore((store) => store.filterInvoices);
 
   const filterInvoices = (invoiceNumber) => {
@@ -40,4 +40,4 @@ function DashboardBodyPaymentInfo() {
   );
 }
 
-export default DashboardBodyPaymentInfo;
+export default DashboardBodyInvoiceInfo;

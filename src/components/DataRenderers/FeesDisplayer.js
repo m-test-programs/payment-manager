@@ -11,8 +11,7 @@ function FeesDisplayer(props) {
   const { mode } = props;
 
   const fees = useStore((store) => store.selectedFees);
-
-  const fetchInvoices = useStore((store) => store.fetchInvoices);
+  const save = useStore((store) => store.saveFees);
 
   const invoice = useStore((store) => store.selectedInvoice);
 
@@ -65,14 +64,7 @@ function FeesDisplayer(props) {
       taxes_fee: taxes,
     };
 
-    await axios.post(
-      `${process.env.REACT_APP_BASE_URL}/invoices/edit_fees.php`,
-      new URLSearchParams(payload)
-    );
-
-    fetchInvoices({
-      selectNumber: invoice.invoice_number,
-    });
+    await save(payload);
 
     closeDialog();
   };
