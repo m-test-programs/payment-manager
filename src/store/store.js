@@ -15,6 +15,9 @@ const useStore = create((set, get) => ({
   users: [],
   selectedUser: {},
 
+  //loading screen
+  dataReady: false,
+
   //media queries
   isMobile: window.matchMedia(`(max-width: ${variables.breakPointMobile})`),
 
@@ -51,9 +54,15 @@ const useStore = create((set, get) => ({
           get().setSelectedInvoice(invoices[index]);
         }
       }
+      setTimeout(() => {
+        set(() => ({ dataReady: true }));
+      }, 1000);
     } catch (err) {
       console.log(err);
       get().setConnectionError(true, err);
+      setTimeout(() => {
+        set(() => ({ dataReady: true }));
+      }, 1000);
     }
   },
 

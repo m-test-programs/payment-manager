@@ -7,15 +7,10 @@ import axios from "axios";
 import useStore from "../../store/store";
 import CustomDialog from "../../components/UI/CustomDialog";
 import SummaryScreen from "../../components/SummaryScreen";
-import { Alert } from "@mui/material";
 import ConnectionError from "../../components/UI/ConnectionError";
 
 function Dashboard() {
   const invoice = useStore((store) => store.selectedInvoice);
-
-  const fetchInvoices = useStore((store) => store.fetchInvoices);
-
-  const getUsers = useStore((store) => store.fetchUsers);
 
   const dialogOpen = useStore((store) => store.summaryDialog);
   const dialogMode = useStore((store) => store.summaryDialogMode);
@@ -23,21 +18,9 @@ function Dashboard() {
   const assignPrice = useStore((store) => store.assignPrice);
   const removePrice = useStore((store) => store.removePrice);
 
-  const fetchUsers = () => {
-    getUsers();
-  };
-
-  useEffect(() => {
-    fetchInvoices({
-      autoSelect: true,
-    });
-    fetchUsers();
-  }, []);
-
   return (
     <div className={styles.container}>
       <ConnectionError />
-
       <CustomDialog
         open={dialogOpen}
         onClose={closeDialog}
