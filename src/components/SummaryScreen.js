@@ -12,8 +12,6 @@ function SummaryScreen(props) {
     (store) => store.assignedInvoiceNumber
   );
 
-  console.log(assignedInvoiceNumber);
-
   const {
     payment_details: { payment_reference_number, payment_amount },
   } = useStore((store) => store.selectedUser);
