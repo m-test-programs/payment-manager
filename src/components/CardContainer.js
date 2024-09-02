@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/Components.module.scss";
-import Icon from "./Icon";
+import Icon from "./UI/Icon";
 import CustomDialog from "./UI/CustomDialog";
 import { Box } from "@mui/material";
 import useStore from "../store/store";

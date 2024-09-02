@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import useStore from "../../store/store";
 import FeeDisplayerEntry from "./FeesDisplayerEntry";
-import CustomButton from "../CustomButton";
+import CustomButton from "../UI/CustomButton";
 import CustomDialog from "../UI/CustomDialog";
 import { useState } from "react";
 import FeesForm from "../forms/FeesForm";

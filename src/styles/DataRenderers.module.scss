@@ -55,7 +55,7 @@
   }
   &__entry {
     display: flex;
-    border: 1px dashed white;
+    background-color: var(--dark-soft);
     padding: 1rem;
     border-radius: var(--border-radius);
     flex-direction: column;

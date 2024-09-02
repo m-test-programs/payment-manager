@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/Components.module.scss";
+import styles from "../../styles/Components.module.scss";
 
 function UserBadge(props) {
   const { image, name } = props;

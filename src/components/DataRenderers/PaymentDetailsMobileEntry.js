@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../styles/DataRenderers.module.scss";
-import Icon from "../Icon";
+import Icon from "../UI/Icon";
 
 function PaymentDetailsMobileEntry(props) {
   const { name, value, icon } = props;

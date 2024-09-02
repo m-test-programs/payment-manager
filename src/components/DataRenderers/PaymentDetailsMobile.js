@@ -4,7 +4,7 @@ import dateFormatter from "../../utils/dateFormatter";
 import styles from "../../styles/DataRenderers.module.scss";
 import PaymentDetailsMobileEntry from "./PaymentDetailsMobileEntry";
 import { priceFormatter } from "../../utils/priceFormatter";
-import Icon from "../Icon";
+import Icon from "../UI/Icon";
 
 function PaymentDetailsMobile() {
   const {
@@ -43,7 +43,10 @@ function PaymentDetailsMobile() {
           />
         </div>
       )}
-      <div className={styles.paymentDetailsMobile__chevron}>
+      <div
+        className={styles.paymentDetailsMobile__chevron}
+        style={{ bottom: paymentDetailsVisible ? "-3.4rem" : "-1.9rem" }}
+      >
         <Icon
           icon={paymentDetailsVisible ? "chevron-up" : "chevron-down"}
           click={togglePaymentDetails}

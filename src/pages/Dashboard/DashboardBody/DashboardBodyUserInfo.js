@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../../../styles/Dashboard.module.scss";
 import CardContainer from "../../../components/CardContainer";
 import CustomerDetails from "../../../components/DataRenderers/CustomerDetails";
-import CustomButton from "../../../components/CustomButton";
+import CustomButton from "../../../components/UI/CustomButton";
 import PaymentDetails from "../../../components/DataRenderers/PaymentDetails";
 import Paragraph from "../../../components/UI/Paragraph";
 import useStore from "../../../store/store";

@@ -4,8 +4,8 @@
             "invoice_number": "484D6-0293",
             "invoice_date": "2024-12-06",
             "invoice_user_id": "372",
-            "invoice_assigned": false,
-            "invoice_amount": null,
+            "invoice_assigned": true,
+            "invoice_amount": "1660.52",
             "invoice_assigned_to_fullname": "",
             "fees": {
                 "platform_fee": "5",

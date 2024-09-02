@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "../../../styles/DashboardHeader.module.scss";
-import IconBadge from "../../../components/IconBadge";
-import Icon from "../../../components/Icon";
-import UserBadge from "../../../components/UserBadge";
+import IconBadge from "../../../components/UI/IconBadge";
+import Icon from "../../../components/UI/Icon";
+import UserBadge from "../../../components/UI/UserBadge";
 import SearchInputAsync from "../../../components/SearchInputAsync";
 import { Box } from "@mui/material";
 import useStore from "../../../store/store";

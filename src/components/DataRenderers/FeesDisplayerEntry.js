@@ -1,6 +1,6 @@
 import React from "react";
 import priceCalculation from "../../utils/priceCalculation";
-import Icon from "../Icon";
+import Icon from "../UI/Icon";
 import styles from "../../styles/DataRenderers.module.scss";
 import { priceFormatter } from "../../utils/priceFormatter";
 import useStore from "../../store/store";

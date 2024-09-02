@@ -1,9 +1,9 @@
 import React from "react";
-import UserBadge from "../UserBadge";
+import UserBadge from "../UI/UserBadge";
 import useStore from "../../store/store";
-import Icon from "../Icon";
+import Icon from "../UI/Icon";
 import dateFormatter from "../../utils/dateFormatter";
-import CustomButton from "../CustomButton";
+import CustomButton from "../UI/CustomButton";
 import styles from "../../styles/DataRenderers.module.scss";
 
 function CustomerDetails() {

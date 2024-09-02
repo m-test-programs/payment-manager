@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../../../styles/Dashboard.module.scss";
 import DashboardHeaderTopbar from "./DashboardHeaderTopbar";
 import DashboardHeaderNav from "./DashboardHeaderNav";
-import Icon from "../../../components/Icon";
+import Icon from "../../../components/UI/Icon";
 import useStore from "../../../store/store";
 import PaymentDetailsMobile from "../../../components/DataRenderers/PaymentDetailsMobile";
 import { variables } from "../../../utils/variables";

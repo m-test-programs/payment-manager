@@ -1,5 +1,5 @@
 import React from "react";
-import FavoriteButton from "../FavoriteButton";
+import FavoriteButton from "../UI/FavoriteButton";
 import styles from "../../styles/Components.module.scss";
 import effects from "../../styles/Effects.module.scss";
 import useStore from "../../store/store";

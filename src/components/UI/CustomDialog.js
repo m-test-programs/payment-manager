@@ -7,8 +7,8 @@ import {
   IconButton,
 } from "@mui/material";
 import React from "react";
-import CustomButton from "../CustomButton";
-import Icon from "../Icon";
+import CustomButton from "../UI/CustomButton";
+import Icon from "../UI/Icon";
 
 function CustomDialog(props) {
   const {

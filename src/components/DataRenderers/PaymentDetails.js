@@ -2,7 +2,7 @@ import React from "react";
 import useStore from "../../store/store";
 import dateFormatter from "../../utils/dateFormatter";
 import styles from "../../styles/DataRenderers.module.scss";
-import CustomButton from "../CustomButton";
+import CustomButton from "../UI/CustomButton";
 import Counter from "../UI/Counter";
 import { priceFormatter } from "../../utils/priceFormatter";
 

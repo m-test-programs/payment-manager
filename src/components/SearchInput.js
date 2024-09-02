@@ -5,7 +5,7 @@ import {
   TextField,
 } from "@mui/material";
 import React from "react";
-import Icon from "./Icon";
+import Icon from "./UI/Icon";
 
 function SearchInput(props) {
   const {

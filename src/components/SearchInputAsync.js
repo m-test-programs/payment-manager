@@ -6,7 +6,7 @@ import {
   TextField,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import Icon from "./Icon";
+import Icon from "./UI/Icon";
 import axios from "axios";
 import useStore from "../store/store";
 

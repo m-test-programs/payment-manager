@@ -6,7 +6,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import styles from "../../styles/Forms.module.scss";
-import Icon from "../Icon";
+import Icon from "../UI/Icon";
 function CustomInput(props) {
   const {
     label,

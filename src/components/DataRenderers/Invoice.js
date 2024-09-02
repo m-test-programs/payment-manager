@@ -3,8 +3,8 @@ import useStore from "../../store/store";
 import dateFormatter from "../../utils/dateFormatter";
 import { priceFormatter } from "../../utils/priceFormatter";
 import styles from "../../styles/DataRenderers.module.scss";
-import CustomButton from "../CustomButton";
-import Icon from "../Icon";
+import CustomButton from "../UI/CustomButton";
+import Icon from "../UI/Icon";
 
 function Invoice() {
   const invoice = useStore((store) => store.selectedInvoice);
