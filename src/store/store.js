@@ -32,6 +32,13 @@ const useStore = create((set, get) => ({
   //layout and design
   paymentDetailsMobileVisible: true,
 
+  //loading screen
+  setDataReady: () => {
+    setTimeout(() => {
+      set(() => ({ dataReady: true }));
+    }, 1000);
+  },
+
   //invoices
 
   fetchInvoices: async (params) => {
@@ -54,9 +61,10 @@ const useStore = create((set, get) => ({
           get().setSelectedInvoice(invoices[index]);
         }
       }
-      setTimeout(() => {
-        set(() => ({ dataReady: true }));
-      }, 1000);
+      return Promise.resolve();
+      // setTimeout(() => {
+      //   set(() => ({ dataReady: true }));
+      // }, 1000);
     } catch (err) {
       console.log(err);
       get().setConnectionError(true, err);
@@ -128,6 +136,7 @@ const useStore = create((set, get) => ({
         get().setUsers(users);
         get().setSelectedUser(users[0]);
         // get().setPaymentDetails(users[0].payment_details);
+        return Promise.resolve();
       }
     } catch (error) {
       get().setConnectionError(true, error);

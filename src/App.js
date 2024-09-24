@@ -9,12 +9,17 @@ function App() {
   const dataReady = useStore((store) => store.dataReady);
   const fetchInvoices = useStore((store) => store.fetchInvoices);
   const getUsers = useStore((store) => store.fetchUsers);
+  const setDataReady = useStore((store) => store.setDataReady);
 
   useEffect(() => {
-    fetchInvoices({
-      autoSelect: true,
-    });
-    getUsers();
+    (async () => {
+      await fetchInvoices({
+        autoSelect: true,
+      });
+      await getUsers();
+
+      setDataReady();
+    })();
   }, []);
 
   return (
